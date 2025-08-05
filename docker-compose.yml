@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sela_db
+    ports:
+      - "5433:5432"
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PGHOST: db
+      PGPORT: 5432
+      PGUSER: user
+      PGPASSWORD: password
+      PGDATABASE: sela_db
+    depends_on:
+      - db
