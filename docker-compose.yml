@@ -4,19 +4,20 @@ services:
     image: postgres:15
     environment:
       POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: Sherytyer@7
       POSTGRES_DB: sela_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
   app:
     build: .
     ports:
       - "3000:3000"
     environment:
+      DATABASE_URL: postgres://user:Sherytyer@7@db:5432/sela_db
+      PGDATABASE: sela_db
       PGHOST: db
       PGPORT: 5432
+      PGPASSWORD: Sherytyer@7
       PGUSER: user
-      PGPASSWORD: password
-      PGDATABASE: sela_db
     depends_on:
       - db
