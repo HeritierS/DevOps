@@ -2,6 +2,8 @@
 
 *Link to the video*
 
+*Live URL* : https://devops-7l3k.onrender.com
+
 
 
 *Dockerized container with backend app and postgres database*
